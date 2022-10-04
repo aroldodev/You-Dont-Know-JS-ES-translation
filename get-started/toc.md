@@ -1,45 +1,45 @@
-# You Don't Know JS Yet: Get Started - 2nd Edition
+# You Don't Know JS Yet: Get Started - 2da Edición
 
-## Table of Contents
+## Tabla de Contenidos
 
-* Foreword
-* Preface
-* Chapter 1: What Is JavaScript?
-    * About This Book
-    * What's With That Name?
-    * Language Specification
-    * Many Faces
-    * Backwards & Forwards
-    * What's in an Interpretation?
-    * Strictly Speaking
-    * Defined
-* Chapter 2: Surveying JS
-    * Each File is a Program
-    * Values
-    * Declaring and Using Variables
-    * Functions
-    * Comparisons
-    * How We Organize in JS
-    * The Rabbit Hole Deepens
-* Chapter 3: Digging To The Roots Of JS
-    * Iteration
-    * Closure
-    * `this` Keyword
-    * Prototypes
-    * Asking "Why?"
-* Chapter 4: The Bigger Picture
-    * Pillar 1: Scope and Closure
-    * Pillar 2: Prototypes
-    * Pillar 3: Types and Coercion
-    * With the Grain
-    * In Order
-* Appendix A: Exploring Further
-    * Values vs. References
-    * So Many Function Forms
-    * Coercive Conditional Comparison
-    * Prototypal "Classes"
-* Appendix B: Practice, Practice, Practice!
-    * Practicing Comparisons
-    * Practicing Closure
-    * Practicing Prototypes
-    * Suggested Solutions
+* Prólogo
+* Prefacio
+* Capítulo 1: ¿Qué es JavaScript?
+  * Sobre este libro
+  * ¿Qué pasa con ese nombre?
+  * Especificaciones del lenguaje
+  * Muchas caras
+  * Hacia atrás y hacia adelante
+  * ¿Qué hay en una interpretación?
+  * Estrictamente hablando
+  * Definido
+* Capítulo 2: Inspeccionando JS
+  * Cada archivo es un programa
+  * Valores
+  * Declarando y usando variables
+  * Funciones
+  * Comparaciones
+  * Cómo nos organizamos en JS
+  * La madriguera del conejo se profundiza
+* Capítulo 3: Excavando hasta las raíces de JS
+  * Iteración
+  * Cierre
+  * Palabra clave `this` 
+  * Prototipos
+  * Preguntando "¿Por qué?"
+* Capítulo 4: El panorama general
+  * Pilar 1: Alcance y Cierre
+  * Pilar 2: Prototipos
+  * Pilar 3: Tipos y Coerción
+  * Al grano
+  * En orden
+* Apéndice A: Explorando más a fondo
+  * Valores vs Referencias
+  * Tantas formas de función
+  * Comparación condicional coercitiva
+  * "Clases" prototipo
+* Apéndice B: ¡Practica, Practica, Practica!
+  * Practicando Comparaciones
+  * Practicando el cierre
+  * Practicando prototipos
+  * Soluciones sugeridas
