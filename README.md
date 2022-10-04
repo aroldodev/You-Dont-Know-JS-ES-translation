@@ -1,4 +1,4 @@
-# You Don't Know JS Yet (book series) - 2da Edición
+# You Don't Know JS Yet (serie de libros) - 2da Edición
 
 Esta es una serie de libros que profundizan en los mecanismos centrales del lenguaje JavaScript. Esta es la **segunda edición** de la serie de libros:
 
