@@ -1,23 +1,23 @@
-**Yes, I promise I've read the [Contributions Guidelines](https://github.com/getify/You-Dont-Know-JS/blob/master/CONTRIBUTING.md)** (please feel free to remove this line).
+**Sí, prometo que he leído las [Directrices de Contribuciones](https://github.com/getify/You-Dont-Know-JS/blob/master/CONTRIBUTING.md)** (no dude en eliminar esta línea).
 
-Specifically quoting these guidelines regarding typos:
+Citando específicamente estas directrices con respecto a los errores tipográficos:
 
-> Typos?
+> ¿Errores tipográficos?
 >
-> Please don't worry about minor text typos. These will almost certainly be caught during the editing process.
+> Por favor, no se preocupe por errores tipográficos menores. Es casi seguro que se detectarán durante el proceso de edición.
 >
-> If you're going to submit a PR for typo fixes, please be measured in doing so by collecting several small changes into a single PR (in separate commits). Or, **just don't even worry about them for now,** because we'll get to them later. I promise.
+> Si va a enviar un PR para correcciones de errores tipográficos, tenga la precaución de hacerlo recopilando varios cambios pequeños en un solo PR (en confirmaciones separadas). O, **simplemente no te preocupes por ellos por ahora,** porque nos ocuparemos de ellos más tarde. Lo prometo.
 
-----
+---
 
-**Please type "I already searched for this issue":**
+**Por favor escriba "Ya busqué este problema":**
 
-**Edition:** (pull requests not accepted for previous editions)
+**Edición:** (pull requests no aceptadas para ediciones anteriores)
 
-**Book Title:**
+**Titulo del libro:**
 
-**Chapter:**
+**Capítulo:**
 
-**Section Title:**
+**Sección de título:**
 
-**Topic:**
+**Tema:**
