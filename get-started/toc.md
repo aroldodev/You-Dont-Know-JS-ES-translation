@@ -27,7 +27,7 @@
   * Palabra clave `this` 
   * Prototipos
   * Preguntando "¿Por qué?"
-* Capítulo 4: El panorama general
+* Capítulo 4: Perspectiva completa
   * Pilar 1: Alcance y Cierre
   * Pilar 2: Prototipos
   * Pilar 3: Tipos y Coerción
