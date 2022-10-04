@@ -1,37 +1,37 @@
-# Contributing
+# Contribuciones
 
-Please feel free to contribute to the quality of this content by submitting PR's for improvements to code snippets, explanations, etc. If there's any doubt or if you think that a word/phrase is used confusingly, **before submitting a PR, open an issue to ask about it.**
+Siéntase libre de contribuir a la calidad de este contenido enviando PR para mejorar fragmentos de código, explicaciones, etc. Si tiene alguna duda o si cree que una palabra/frase se usa de manera confusa, **antes de enviar un PR, abra un tema para preguntar al respecto.**
 
-However, if you choose to contribute content (not just typo corrections) to this repo, you agree that you're giving me a non-exclusive license to use that content for the book, as I (and my publisher) deem appropriate. You probably guessed that already, but I just wanted to be extra clear on that.
+Sin embargo, si elige aportar contenido (no solo correcciones de errores tipográficos) a este repositorio, acepta que me otorga una licencia no exclusiva para usar ese contenido para el libro, según lo consideremos apropiado (y mi editor). Probablemente ya lo hayas adivinado, pero solo quería ser más claro al respecto.
 
-## Reading Experience (Chapter/Section links, etc)
+## Experiencia de lectura (enlaces de capítulo/sección, etc.)
 
-I understand that reading one long .md file, with no relative cross links to other sections/etc, is not the preferred reading experience for most of you. As such, it's totally reasonable to want to file an issue/PR to add those kinds of features.
+Entiendo que leer un archivo .md largo, sin enlaces cruzados relativos a otras secciones/etc., no es la experiencia de lectura preferida para la mayoría de ustedes. Como tal, es totalmente razonable querer presentar un issue/PR para agregar ese tipo de funciones.
 
-This topic has been brought up many times, and I've considered it. For now, I **do not** accept these kinds of changes into the repo.
+Este tema ha sido mencionado muchas veces, y lo he considerado. Por ahora, **no** acepto este tipo de cambios en el repositorio.
 
-The main purpose of my book repos is to track and manage the content for the purposes of publication (paid-for ebooks and print books). I do this in the open because I also care about providing free and early access to the content, to make sure there is no paywall barrier to learning.
+El objetivo principal de mis repositorios de libros es rastrear y administrar el contenido con fines de publicación (libros electrónicos pagados y libros impresos). Hago esto abiertamente porque también me importa proporcionar acceso temprano y gratuito al contenido, para asegurarme de que no haya una barrera de pago para el aprendizaje.
 
-As such, this repo **is not optimized for your reading experience.**
+Como tal, este repositorio **no está optimizado para su experiencia de lectura.**
 
-The intended **best reading experience** are the published books (either ebook or print), so I encourage you to purchase them for that purpose.
+La **mejor experiencia de lectura** prevista son los libros publicados (ya sea en formato electrónico o impreso), por lo que le animo a que los compre para ese fin.
 
-## Editions
+## Ediciones
 
-The current edition (*work in progress*) of the books is the 2nd edition. While these 2nd edition books are in progress, contributions are OK, but **there's no need to jump the gun early** while I'm still working on stuff. That's what "work in progress" means. :)
+La edición actual (_trabajo en progreso_) de los libros es la segunda edición. Mientras estos libros de la segunda edición están en progreso, las contribuciones están bien, pero **no hay necesidad de apresurarse antes** mientras todavía estoy trabajando en cosas. Eso es lo que significa "trabajo en progreso". :)
 
-| NOTE: |
-| :--- |
-| **ALSO**, please note that while a book is in progress, the previous 1st edition text may be included at the bottom of each file, and marked as such. Please ignore this text, as contributions there are not relevant. |
+| NOTA:                                                                                                                                                                                                                                                 |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **TAMBIÉN**, tenga en cuenta que mientras un libro está en proceso, el texto de la primera edición anterior puede incluirse en la parte inferior de cada archivo y marcarse como tal. Ignore este texto, ya que las contribuciones no son relevantes. |
 
-I **am not accepting any contributions** for 1st edition books.
+**No acepto ninguna contribución** para libros de la primera edición.
 
-## Typos?
+## ¿Errores tipográficos?
 
-Please don't worry about minor text typos. These will almost certainly be caught during the editing process.
+Por favor, no se preocupe por errores tipográficos menores. Es casi seguro que se detectarán durante el proceso de edición.
 
-If you're going to submit a PR for typo fixes, please be measured in doing so by collecting several small changes into a single PR (in separate commits). Or, **just don't even worry about them for now,** because we'll get to them later. I promise.
+Si va a enviar un PR para correcciones de errores tipográficos, tenga la precaución de hacerlo recopilando varios cambios pequeños en un solo PR (en confirmaciones separadas). O, **simplemente no te preocupes por ellos por ahora,** porque nos ocuparemos de ellos más tarde. Lo prometo.
 
-## Search First!
+## ¡Busca Primero!
 
-Also, if you have any questions or concerns, please make sure to search the issues (both open and closed!) first, to keep the churn of issues to a minimum. I want to keep my focus on writing these books as much as possible.
+Además, si tiene alguna pregunta o inquietud, asegúrese de buscar los issues (¡tanto abiertos como cerrados!) Primero, para evitar revolver los issues al mínimo. Quiero mantener mi enfoque en escribir estos libros tanto como sea posible.
