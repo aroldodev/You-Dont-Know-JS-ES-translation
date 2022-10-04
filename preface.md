@@ -1,84 +1,85 @@
-# You Don't Know JS Yet - 2nd Edition
-# Preface
+# You Don't Know JS Yet - 2da Edición
 
-Welcome to the 2nd edition of the widely acclaimed *You Don't Know JS* (**YDKJS**) book series: *You Don't Know JS **Yet*** (**YDKJSY**).
+# Prefacio
 
-If you've read any of the 1st edition books, you can expect a refreshed approach in these new ones, with plenty of updated coverage of what's changed in JS over the last five years. But what I hope and believe you'll still *get* is the same commitment to respecting JS and digging into what really makes it tick.
+Bienvenido a la 2da edición de la ampliamente aclamada serie de libros _You Don't Know JS_: \*You Don't Know JS **Yet\*** (**YDKJSY**).
 
-If this is your first time reading these books, I'm glad you're here. Prepare for a deep and extensive journey into all the corners of JavaScript.
+Si ha leído alguno de los libros de la primera edición, puede esperar un enfoque renovado en estos nuevos, con mucha cobertura actualizada de lo que ha cambiado en JS en los últimos cinco años. Pero lo que espero y creo que _obtendrá_ es el mismo compromiso de respetar a JS y profundizar en lo que realmente lo hace funcionar.
 
-If you are new to programming or JS, be aware that these books are not intended as a gentle "intro to JavaScript." This material is, at times, complex and challenging, and goes much deeper than is typical for a first-time learner. You're welcome here no matter what your background is, but these books are written assuming you're already comfortable with JS and have at least 6–9 months experience with it.
+Si es la primera vez que lee estos libros, me alegro de que esté aquí. Prepárese para un viaje profundo y extenso por todos los rincones de JavaScript.
 
-## The Parts
+Si es nuevo en programación o JS, tenga en cuenta que estos libros no pretenden ser una amable "introducción a JavaScript". Este material es, a veces, complejo y desafiante, y es mucho más profundo de lo que es típico para un principiante. Es bienvenido aquí sin importar cuál sea su experiencia, pero estos libros están escritos asumiendo que ya se siente cómodo con JS y tiene al menos 6 a 9 meses de experiencia con él.
 
-These books approach JavaScript intentionally opposite of how *The Good Parts* treats the language. No, that doesn't mean we're looking at *the bad parts*, but rather, exploring **all the parts**.
+## Las Partes
 
-You may have been told, or felt yourself, that JS is a deeply flawed language that was poorly designed and inconsistently implemented. Many have asserted that it's the worst most popular language in the world; that nobody writes JS because they want to, only because they have to given its place at the center of the web. That's a ridiculous, unhealthy, and wholly condescending claim.
+Estos libros se acercan a JavaScript intencionalmente de manera opuesta a cómo _The Good Parts_ trata el lenguaje. No, eso no significa que estemos viendo _las partes malas_, sino explorando **todas las partes**.
 
-Millions of developers write JavaScript every day, and many of them appreciate and respect the language.
+Es posible que le hayan dicho, o usted mismo haya sentido, que JS es un lenguaje profundamente defectuoso que fue mal diseñado e implementado de manera inconsistente. Muchos han afirmado que es el peor idioma más popular del mundo; que nadie escribe JS porque quiere, solo porque tiene que darle su lugar en el centro de la web. Esa es una afirmación ridícula, poco saludable y totalmente condescendiente.
 
-Like any great language, it has its brilliant parts as well as its scars. Even the creator of JavaScript himself, Brendan Eich, laments some of those parts as mistakes. But he's wrong: they weren't mistakes at all. JS is what it is today—the world's most ubiquitous and thus most influential programming language—precisely because of *all those parts*.
+Millones de desarrolladores escriben JavaScript todos los días y muchos de ellos aprecian y respetan el lenguaje.
 
-Don't buy the lie that you should only learn and use a small collection of *good parts* while avoiding all the bad stuff. Don't buy the "X is the new Y" snake oil, that some new feature of the language instantly relegates all usage of a previous feature as obsolete and ignorant. Don't listen when someone says your code isn't "modern" because it isn't yet using a stage-0 feature that was only proposed a few weeks ago!
+Como toda gran lenguaje, tiene sus partes brillantes así como sus cicatrices. Incluso el propio creador de JavaScript, Brendan Eich, lamenta que algunas de esas partes sean errores. Pero se equivoca: no fueron errores en absoluto. JS es lo que es hoy, el lenguaje de programación más ubicuo y, por lo tanto, más influyente del mundo, precisamente debido a _todas esas partes_.
 
-Every part of JS is useful. Some parts are more useful than others. Some parts require you to be more careful and intentional.
+No crea la mentira de que solo debe aprender y usar una pequeña colección de _partes buenas_ mientras evita todas las cosas malas. No compre el veneno de serpiente "X es la nueva Y", que alguna característica nueva del lenguaje relega instantáneamente todo uso de una característica anterior como obsoleta e ignorante. ¡No escuche cuando alguien dice que su código no es "moderno" porque aún no está usando una función de etapa 0 que solo se propuso hace unas semanas!
 
-I find it absurd to try to be a truly effective JavaScript developer while only using a small sliver of what the language has to offer. Can you imagine a construction worker with a toolbox full of tools, who only uses their hammer and scoffs at the screwdriver or tape measure as inferior? That's just silly.
+Cada parte de JS es útil. Algunas partes son más útiles que otras. Algunas partes requieren que seas más cuidadoso e intencional.
 
-My unreserved claim is that you should go about learning all parts of JavaScript, and where appropriate, use them! And if I may be so bold as to suggest: it's time to discard any JS books that tell you otherwise.
+Me parece absurdo tratar de ser un desarrollador de JavaScript realmente efectivo mientras solo uso una pequeña porción de lo que el lenguaje tiene para ofrecer. ¿Te imaginas a un obrero de la construcción con una caja de herramientas llena de herramientas, que solo usa su martillo y se burla del destornillador o la cinta métrica como inferiores? Eso es tonto.
 
-## The Title?
+Mi reclamo sin reservas es que debe aprender todas las partes de JavaScript y, cuando corresponda, ¡utilizarlas! Y si puedo ser tan atrevido como para sugerir: es hora de descartar cualquier libro de JS que le diga lo contrario.
 
-So what's the title of the series all about?
+## ¿El título?
 
-I'm not trying to insult you with criticism about your current lack of knowledge or understanding of JavaScript. I'm not suggesting you can't or won't be able to learn JavaScript. I'm not boasting about secret advanced insider wisdom that I and only a select few possess.
+Entonces, ¿de qué se trata el título de la serie?
 
-Seriously, all those were real reactions to the original series title before folks even read the books. And they're baseless.
+No estoy tratando de insultarte con críticas sobre tu actual falta de conocimiento o comprensión de JavaScript. No estoy sugiriendo que no puedas o no puedas aprender JavaScript. No me estoy jactando de la sabiduría interna avanzada secreta que yo y solo unos pocos selectos poseemos.
 
-The primary point of the title "You Don't Know JS Yet" is to point out that most JS developers don't take the time to really understand how the code that they write works. They know *that* it works—that it produces a desired outcome. But they either don't understand exactly *how*, or worse, they have an inaccurate mental model for the *how* that falters on closer scrutiny.
+En serio, todas esas fueron reacciones reales al título de la serie original antes de que la gente leyera los libros. Y son infundados.
 
-I'm presenting a gentle but earnest challenge to you the reader, to set aside the assumptions you have about JS, and approach it with fresh eyes and an invigorated curiosity that leads you to ask *why* for every line of code you write. Why does it do what it does? Why is one way better or more appropriate than the other half-dozen ways you could have accomplished it? Why do all the "popular kids" say to do X with your code, but it turns out that Y might be a better choice?
+El punto principal del título "Todavía no conoces JS" es señalar que la mayoría de los desarrolladores de JS no se toman el tiempo para comprender realmente cómo funciona el código que escriben. Saben _que_ funciona, que produce el resultado deseado. Pero no entienden exactamente _cómo_, o peor aún, tienen un modelo mental inexacto para el _cómo_ que falla en un examen más detenido.
 
-I added "Yet" to the title, not only because it's the second edition, but because ultimately I want these books to challenge you in a hopeful rather than discouraging way.
+Estoy presentando un desafío suave pero serio para usted, el lector, para que deje de lado las suposiciones que tiene sobre JS y lo aborde con ojos frescos y una curiosidad vigorizada que lo lleve a preguntarse _por qué_ para cada línea de código que escribe. ¿Por qué hace lo que hace? ¿Por qué una forma es mejor o más apropiada que la otra media docena de formas en que podrías haberlo logrado? ¿Por qué todos los "niños populares" dicen que haga X con su código, pero resulta que Y podría ser una mejor opción?
 
-But let me be clear: I don't think it's possible to ever fully *know* JS. That's not an achievement to be obtained, but a goal to strive after. You don't finish knowing everything about JS, you just keep learning more and more as you spend more time with the language. And the deeper you go, the more you revisit what you *knew* before, and you re-learn it from that more experienced perspective.
+Agregué "Todavía" al título, no solo porque es la segunda edición, sino porque, en última instancia, quiero que estos libros lo desafíen de una manera esperanzadora en lugar de desalentadora.
 
-I encourage you to adopt a mindset around JavaScript, and indeed all of software development, that you will never fully have mastered it, but that you can and should keep working to get closer to that end, a journey that will stretch for the entirety of your software development career, and beyond.
+Pero déjame ser claro: no creo que sea posible nunca _conocer_ completamente a JS. Eso no es un logro que se debe obtener, sino una meta por la que luchar. No terminas de saber todo sobre JS, solo sigue aprendiendo más y más a medida que pasas más tiempo con el lenguaje. Y cuanto más profundiza, más revisa lo que _sabía_ antes, y lo vuelve a aprender desde esa perspectiva más experimentada.
 
-You can always know JS better than you currently do. That's what I hope these YDKJSY books represent.
+Lo animo a que adopte una mentalidad en torno a JavaScript y, de hecho, a todo el desarrollo de software, que nunca lo dominará por completo, pero que puede y debe seguir trabajando para acercarse a ese fin, un viaje que se extenderá por la totalidad de su carrera de desarrollo de software y más allá.
 
-## The Mission
+Siempre puede conocer JS mejor de lo que lo hace actualmente. Eso es lo que espero que representen estos libros de YDKJSY.
 
-The case doesn't really need to be made for why developers should take JS seriously—I think it's already more than proven worthy of first-class status among the world's programming languages.
+## La Misión
 
-But a different, more important case still needs to be made, and these books rise to that challenge.
+Realmente no es necesario argumentar por qué los desarrolladores deben tomar JS en serio; creo que ya se ha demostrado que es digno de un estatus de primera clase entre los lenguajes de programación del mundo.
 
-I've taught more than 5,000 developers from teams and companies all over the world, in more than 25 countries on six continents. And what I've seen is that far too often, what *counts* is generally just the result of the program, not how the program is written or how/why it works.
+Pero aún se necesita hacer un caso diferente y más importante, y estos libros están a la altura de ese desafío.
 
-My experience not only as a developer but in teaching many other developers tells me: you will always be more effective in your development work if you more completely understand how your code works than you are solely *just* getting it to produce a desired outcome.
+He enseñado a más de 5000 desarrolladores de equipos y empresas de todo el mundo, en más de 25 países de seis continentes. Y lo que he visto es que con demasiada frecuencia, lo que _cuenta_ generalmente es solo el resultado del programa, no cómo se escribe el programa o cómo/por qué funciona.
 
-In other words, *good enough to work* is not, and should not be, *good enough*.
+Mi experiencia no solo como desarrollador, sino también al enseñar a muchos otros desarrolladores me dice: siempre será más efectivo en su trabajo de desarrollo si comprende más completamente cómo funciona su código que simplemente _solo_ logra que produzca el resultado deseado.
 
-All developers regularly struggle with some piece of code not working correctly, and they can't figure out why. But far too often, JS developers will blame this on the language rather than admitting it's their own understanding that is falling short. These books serve as both the question and answer: why did it do *this*, and here's how to get it to do *that* instead.
+En otras palabras, _suficientemente bueno para trabajar_ no es, y no debería ser, _suficientemente bueno_.
 
-My mission with YDKJSY is to empower every single JS developer to fully own the code they write, to understand it and to write with intention and clarity.
+Todos los desarrolladores luchan regularmente con algún fragmento de código que no funciona correctamente y no saben por qué. Pero con demasiada frecuencia, los desarrolladores de JS culparán de esto al lenguaje en lugar de admitir que es su propio entendimiento el que se está quedando corto. Estos libros sirven tanto para la pregunta como para la respuesta: por qué hizo _esto_, y aquí se explica cómo lograr que haga _eso_ en su lugar.
 
-## The Path
+Mi misión con YDKJSY es capacitar a todos los desarrolladores de JS para que sean dueños del código que escriben, lo entiendan y lo escriban con intención y claridad.
 
-Some of you have started reading this book with the goal of completing all six books, back to back.
+## El Camino
 
-I would like to caution you to consider changing that plan.
+Algunos de ustedes han comenzado a leer este libro con el objetivo de completar los seis libros, uno tras otro.
 
-It is not my intention that YDKJSY be read straight through. The material in these books is dense, because JavaScript is powerful, sophisticated, and in parts rather complex. Nobody can really hope to *download* all this information to their brains in a single pass and retain any significant amount of it. That's unreasonable, and it's foolish to try.
+Me gustaría advertirle que considere cambiar ese plan.
 
-My suggestion is you take your time going through YDKJSY. Take one chapter, read it completely through start to finish, and then go back and re-read it section by section. Stop in between each section, and practice the code or ideas from that section. For larger concepts, it probably is a good idea to expect to spend several days digesting, re-reading, practicing, then digesting some more.
+No es mi intención que YDKJSY se lea directamente. El material de estos libros es denso, porque JavaScript es potente, sofisticado y, en parte, bastante complejo. Nadie puede realmente esperar _descargar_ toda esta información a sus cerebros en un solo paso y retener una cantidad significativa de ella. Eso no es razonable, y es una tontería intentarlo.
 
-You could spend a week or two on each chapter, and a month or two on each book, and a year or more on the whole series, and you would still not be squeezing every ounce of YDKJSY out.
+Mi sugerencia es que se tome su tiempo para revisar YDKJSY. Tome un capítulo, léalo completamente de principio a fin y luego regrese y vuelva a leerlo sección por sección. Deténgase entre cada sección y practique el código o las ideas de esa sección. Para conceptos más grandes, probablemente sea una buena idea esperar pasar varios días digiriendo, releyendo, practicando y luego digiriendo un poco más.
 
-Don't binge these books; be patient and spread out your reading. Interleave reading with lots of practice on real code in your job or on projects you participate in. Wrestle with the opinions I've presented along the way, debate with others, and most of all, disagree with me! Run a study group or book club. Teach mini-workshops at your office. Write blog posts on what you've learned. Speak about these topics at local JS meetups.
+Podría pasar una semana o dos en cada capítulo, y un mes o dos en cada libro, y un año o más en toda la serie, y aún no estaría exprimiendo cada onza de YDKJSY.
 
-It's never my goal to convince you to agree with my opinion, but to encourage you to own and be able to defend your opinions. You can't get *there* with an expedient read-through of these books. That's something that takes a long while to emerge, little by little, as you study and ponder and re-visit.
+No atrape estos libros; sea paciente y extienda su lectura. Intercale la lectura con mucha práctica en código real en tu trabajo o en proyectos en los que participe. Luche con las opiniones que he presentado a lo largo del camino, debata con otros y, sobre todo, ¡no esté de acuerdo conmigo! Dirija un grupo de estudio o un club de lectura. Imparta mini-talleres en su oficina. Escriba publicaciones de blog sobre lo que ha aprendido. Hable sobre estos temas en las reuniones locales de JS.
 
-These books are meant to be a field-guide on your wanderings through JavaScript, from wherever you currently are with the language, to a place of deeper understanding. And the deeper you understand JS, the more questions you will ask and the more you will have to explore! That's what I find so exciting!
+Mi objetivo nunca es convencerle de que esté de acuerdo con mi opinión, sino alentarle a que tenga y pueda defender sus opiniones. No puede llegar _ahí_ con una lectura rápida de estos libros. Eso es algo que tarda mucho en surgir, poco a poco, a medida que estudia, reflexiona y vuelve a visitar.
 
-I'm so glad you're embarking on this journey, and I am so honored you would consider and consult these books along the way. It's time to start *getting to know JS*.
+Estos libros están destinados a ser una guía de campo en sus viajes a través de JavaScript, desde cualquier lugar en el que se encuentre actualmente con el idioma, hasta un lugar de comprensión más profunda. ¡Y cuanto más comprenda JS, más preguntas hará y más tendrá que explorar! ¡Eso es lo que encuentro tan emocionante!
+
+Estoy tan contento de que se haya embarcado en este viaje, y me siento muy honrado de que considere y consulte estos libros en el camino. Es hora de empezar a _conocer a JS_.
