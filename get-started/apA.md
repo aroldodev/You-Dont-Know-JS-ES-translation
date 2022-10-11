@@ -1,25 +1,24 @@
-# You Don't Know JS Yet: Get Started - 2nd Edition
-# Appendix A: Exploring Further
+# You Don't Know JS Yet: Get Started - 2da Edición
+# Apéndice A: Explorando más a fondo
 
-In this appendix, we're going to explore some topics from the main chapter text in a bit more detail. Think of this content as an optional preview of some of the more nuanced details covered throughout the rest of the book series.
+En este apéndice, vamos a explorar algunos temas del texto del capítulo principal con un poco más de detalle. Piense en este contenido como una vista previa opcional de algunos de los detalles más matizados cubiertos en el resto de la serie de libros.
 
-## Values vs. References
+## Valores vs. Referencias
 
-In Chapter 2, we introduced the two main types of values: primitives and objects. But we didn't discuss yet one key difference between the two: how these values are assigned and passed around.
+En el Capítulo 2, presentamos los dos tipos principales de valores: primitivos y objetos. Pero aún no discutimos una diferencia clave entre los dos: cómo se asignan y se transmiten estos valores.
 
-In many languages, the developer can choose between assigning/passing a value as the value itself, or as a reference to the value. In JS, however, this decision is entirely determined by the kind of value. That surprises a lot of developers from other languages when they start using JS.
+En muchos idiomas, el desarrollador puede elegir entre asignar/pasar un valor como el valor en sí mismo o como una referencia al valor. En JS, sin embargo, esta decisión está totalmente determinada por el tipo de valor. Eso sorprende a muchos desarrolladores de otros lenguajes cuando comienzan a usar JS.
 
-If you assign/pass a value itself, the value is copied. For example:
+Si asigna/pasa un valor en sí mismo, el valor se copia. Por ejemplo:
 
 ```js
 var myName = "Kyle";
 
 var yourName = myName;
 ```
+Aquí, la variable `yourName` tiene una copia separada de la cadena `"Kyle"` del valor que está almacenado en `myName`. Esto se debe a que el valor es un primitivo, y los valores primitivos siempre se asignan/pasan como **copias de valor**.
 
-Here, the `yourName` variable has a separate copy of the `"Kyle"` string from the value that's stored in `myName`. That's because the value is a primitive, and primitive values are always assigned/passed as **value copies**.
-
-Here's how you can prove there's two separate values involved:
+Así es como puede probar que hay dos valores separados involucrados:
 
 ```js
 var myName = "Kyle";
@@ -35,11 +34,11 @@ console.log(yourName);
 // Kyle
 ```
 
-See how `yourName` wasn't affected by the re-assignment of `myName` to `"Frank"`? That's because each variable holds its own copy of the value.
+¿Ves cómo `yourName` no se vio afectado por la reasignación de `myName` a `"Frank"`? Eso es porque cada variable tiene su propia copia del valor.
 
-By contrast, references are the idea that two or more variables are pointing at the same value, such that modifying this shared value would be reflected by an access via any of those references. In JS, only object values (arrays, objects, functions, etc.) are treated as references.
+Por el contrario, las referencias son la idea de que dos o más variables apuntan al mismo valor, de modo que la modificación de este valor compartido se reflejaría en un acceso a través de cualquiera de esas referencias. En JS, solo los valores de los objetos (matrices, objetos, funciones, etc.) se tratan como referencias.
 
-Consider:
+Considere:
 
 ```js
 var myAddress = {
@@ -50,14 +49,16 @@ var myAddress = {
 
 var yourAddress = myAddress;
 
-// I've got to move to a new house!
+// ¡Tengo que mudarme a una casa nueva!
 myAddress.street = "456 TS Ave";
 
 console.log(yourAddress.street);
 // 456 TS Ave
 ```
 
-Because the value assigned to `myAddress` is an object, it's held/assigned by reference, and thus the assignment to the `yourAddress` variable is a copy of the reference, not the object value itself. That's why the updated value assigned to the `myAddress.street` is reflected when we access `yourAddress.street`. `myAddress` and `yourAddress` have copies of the reference to the single shared object, so an update to one is an update to both.
+Debido a que el valor asignado a `myAddress` es un objeto, se mantiene/asigna por referencia y, por lo tanto, la asignación a la variable `yourAddress` es una copia de la referencia, no el valor del objeto en sí. Es por eso que el valor actualizado asignado a `myAddress.street` se refleja cuando accedemos a `yourAddress.street`. `myAddress` y `yourAddress` tienen copias de la referencia al único objeto compartido, por lo que una actualización de uno es una actualización de ambos.
+
+<!-- AQUI -->
 
 Again, JS chooses the value-copy vs. reference-copy behavior based on the value type. Primitives are held by value, objects are held by reference. There's no way to override this in JS, in either direction.
 
