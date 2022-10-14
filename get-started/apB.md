@@ -1,99 +1,93 @@
-# You Don't Know JS Yet: Get Started - 2nd Edition
-# Appendix B: Practice, Practice, Practice!
+# You Don't Know JS Yet: Get Started - 2da Edición
 
-In this appendix, we'll explore some exercises and their suggested solutions. These are just to *get you started* with practice over the concepts from the book.
+# Apéndice B: ¡Practica, Practica, Practica!
 
-## Practicing Comparisons
+En este apéndice, exploraremos algunos ejercicios y sus soluciones sugeridas. Estos son solo para _comenzar_ con la práctica de los conceptos del libro.
 
-Let's practice working with value types and comparisons (Chapter 4, Pillar 3) where coercion will need to be involved.
+## Practicando Comparaciones
 
-`scheduleMeeting(..)` should take a start time (in 24-hour format as a string "hh:mm") and a meeting duration (number of minutes). It should return `true` if the meeting falls entirely within the work day (according to the times specified in `dayStart` and `dayEnd`); return `false` if the meeting violates the work day bounds.
+Practiquemos el trabajo con tipos de valores y comparaciones (Capítulo 4, Pilar 3) donde será necesario involucrar la coerción.
+
+`scheduleMeeting(..)` debe tener una hora de inicio (en formato de 24 horas como una cadena "hh:mm") y una duración de la reunión (cantidad de minutos). Debería devolver `true` si la reunión cae completamente dentro de la jornada laboral (según las horas especificadas en `dayStart` y `dayEnd`); devolver `false` si la reunión infringe los límites de la jornada laboral.
 
 ```js
 const dayStart = "07:30";
 const dayEnd = "17:45";
 
-function scheduleMeeting(startTime,durationMinutes) {
+function scheduleMeeting(startTime, durationMinutes) {
     // ..TODO..
 }
 
-scheduleMeeting("7:00",15);     // false
-scheduleMeeting("07:15",30);    // false
-scheduleMeeting("7:30",30);     // true
-scheduleMeeting("11:30",60);    // true
-scheduleMeeting("17:00",45);    // true
-scheduleMeeting("17:30",30);    // false
-scheduleMeeting("18:00",15);    // false
+scheduleMeeting("7:00", 15); // false
+scheduleMeeting("07:15", 30); // false
+scheduleMeeting("7:30", 30); // true
+scheduleMeeting("11:30", 60); // true
+scheduleMeeting("17:00", 45); // true
+scheduleMeeting("17:30", 30); // false
+scheduleMeeting("18:00", 15); // false
 ```
 
-Try to solve this yourself first. Consider the usage of equality and relational comparison operators, and how coercion impacts this code. Once you have code that works, *compare* your solution(s) to the code in "Suggested Solutions" at the end of this appendix.
+Intenta resolver esto tú mismo primero. Considere el uso de operadores de comparación relacional y de igualdad, y cómo la coerción afecta este código. Una vez que tenga un código que funcione, _compare_ su(s) solución(es) con el código de "Soluciones sugeridas" al final de este apéndice.
 
-## Practicing Closure
+## Practicando Clausuras
 
-Now let's practice with closure (Chapter 4, Pillar 1).
+Ahora practiquemos con el cierre (Capítulo 4, Pilar 1).
 
-The `range(..)` function takes a number as its first argument, representing the first number in a desired range of numbers. The second argument is also a number representing the end of the desired range (inclusive). If the second argument is omitted, then another function should be returned that expects that argument.
+La función `range(..)` toma un número como su primer argumento, representando el primer número en un rango deseado de números. El segundo argumento también es un número que representa el final del rango deseado (inclusive). Si se omite el segundo argumento, se debe devolver otra función que espere ese argumento.
 
 ```js
-function range(start,end) {
+function range(start, end) {
     // ..TODO..
 }
 
-range(3,3);    // [3]
-range(3,8);    // [3,4,5,6,7,8]
-range(3,0);    // []
+range(3, 3); // [3]
+range(3, 8); // [3,4,5,6,7,8]
+range(3, 0); // []
 
 var start3 = range(3);
 var start4 = range(4);
 
-start3(3);     // [3]
-start3(8);     // [3,4,5,6,7,8]
-start3(0);     // []
+start3(3); // [3]
+start3(8); // [3,4,5,6,7,8]
+start3(0); // []
 
-start4(6);     // [4,5,6]
+start4(6); // [4,5,6]
 ```
 
-Try to solve this yourself first.
+Intenta resolver esto tú mismo primero.
 
-Once you have code that works, *compare* your solution(s) to the code in "Suggested Solutions" at the end of this appendix.
+Una vez que tenga un código que funcione, _compare_ su(s) solución(es) con el código de "Soluciones sugeridas" al final de este apéndice.
 
-## Practicing Prototypes
+## Practicando Prototipos
 
-Finally, let's work on `this` and objects linked via prototype (Chapter 4, Pillar 2).
+Finalmente, trabajemos en `this` y objetos vinculados vía prototipo (Capítulo 4, Pilar 2).
 
-Define a slot machine with three reels that can individually `spin()`, and then `display()` the current contents of all the reels.
+Defina una máquina tragamonedas con tres carretes que pueden `spin()` individualmente y luego `display()` el contenido actual de todos los carretes.
 
-The basic behavior of a single reel is defined in the `reel` object below. But the slot machine needs individual reels—objects that delegate to `reel`, and which each have a `position` property.
+El comportamiento básico de un solo carrete se define en el objeto `reel` a continuación. Pero la máquina tragamonedas necesita carretes individuales: objetos que se deleguen en un `reel`, y cada uno de los cuales tenga una propiedad de `position`.
 
-A reel only *knows how* to `display()` its current slot symbol, but a slot machine typically shows three symbols per reel: the current slot (`position`), one slot above (`position - 1`), and one slot below (`position + 1`). So displaying the slot machine should end up displaying a 3 x 3 grid of slot symbols.
+Un carrete solo _sabe cómo_ `display()` su símbolo de tragamonedas actual, pero una máquina tragamonedas normalmente muestra tres símbolos por carrete: el tragamonedas actual (`position`), un tragamonedas arriba (`position - 1`) y una ranura debajo (`position + 1`). Por lo tanto, mostrar la máquina tragamonedas debería terminar mostrando una cuadrícula de 3 x 3 de símbolos de tragamonedas.
 
 ```js
 function randMax(max) {
-    return Math.trunc(1E9 * Math.random()) % max;
+    return Math.trunc(1e9 * Math.random()) % max;
 }
 
 var reel = {
-    symbols: [
-        "♠", "♥", "♦", "♣", "☺", "★", "☾", "☀"
-    ],
+    symbols: ["♠", "♥", "♦", "♣", "☺", "★", "☾", "☀"],
     spin() {
         if (this.position == null) {
-            this.position = randMax(
-                this.symbols.length - 1
-            );
+            this.position = randMax(this.symbols.length - 1);
         }
-        this.position = (
-            this.position + 100 + randMax(100)
-        ) % this.symbols.length;
+        this.position =
+            (this.position + 100 + randMax(100)) % this.symbols.length;
     },
     display() {
         if (this.position == null) {
-            this.position = randMax(
-                this.symbols.length - 1
-            );
+            this.position = randMax(this.symbols.length - 1);
         }
         return this.symbols[this.position];
-    }
+    },
 };
 
 var slotMachine = {
@@ -102,13 +96,13 @@ var slotMachine = {
         // hint: Object.create(..)
     ],
     spin() {
-        this.reels.forEach(function spinReel(reel){
+        this.reels.forEach(function spinReel(reel) {
             reel.spin();
         });
     },
     display() {
         // TODO
-    }
+    },
 };
 
 slotMachine.spin();
@@ -124,30 +118,30 @@ slotMachine.display();
 // ☺ | ♦ | ★
 ```
 
-Try to solve this yourself first.
+Intente resolver esto usted mismo primero.
 
-Hints:
+Sugerencias:
 
-* Use the `%` modulo operator for wrapping `position` as you access symbols circularly around a reel.
+-   Use el operador de módulo `%` para envolver `position` a medida que accede a los símbolos circularmente alrededor de un carrete.
 
-* Use `Object.create(..)` to create an object and prototype-link it to another object. Once linked, delegation allows the objects to share `this` context during method invocation.
+-   Utilice `Object.create(..)` para crear un objeto y vincularlo a otro objeto. Una vez vinculado, la delegación permite que los objetos compartan `this` durante la invocación del método.
 
-* Instead of modifying the reel object directly to show each of the three positions, you can use another temporary object (`Object.create(..)` again) with its own `position`, to delegate from.
+-   En lugar de modificar el objeto del carrete directamente para mostrar cada una de las tres posiciones, puede usar otro objeto temporal (`Object.create(..)` otra vez) con su propia `position`, para delegar.
 
-Once you have code that works, *compare* your solution(s) to the code in "Suggested Solutions" at the end of this appendix.
+Una vez que tenga un código que funcione, _compare_ su(s) solución(es) con el código de "Soluciones sugeridas" al final de este apéndice.
 
-## Suggested Solutions
+## Soluciones Sugeridas
 
-Keep in mind that these suggested solutions are just that: suggestions. There's many different ways to solve these practice exercises. Compare your approach to what you see here, and consider the pros and cons of each.
+Tenga en cuenta que estas soluciones sugeridas son solo eso: sugerencias. Hay muchas maneras diferentes de resolver estos ejercicios de práctica. Compare su enfoque con lo que ve aquí y considere los pros y los contras de cada uno.
 
-Suggested solution for "Comparisons" (Pillar 3) practice:
+Solución sugerida para la práctica de "Comparaciones" (Pilar 3):
 
 ```js
 const dayStart = "07:30";
 const dayEnd = "17:45";
 
-function scheduleMeeting(startTime,durationMinutes) {
-    var [ , meetingStartHour, meetingStartMinutes ] =
+function scheduleMeeting(startTime, durationMinutes) {
+    var [, meetingStartHour, meetingStartMinutes] =
         startTime.match(/^(\d{1,2}):(\d{2})$/) || [];
 
     durationMinutes = Number(durationMinutes);
@@ -156,79 +150,65 @@ function scheduleMeeting(startTime,durationMinutes) {
         typeof meetingStartHour == "string" &&
         typeof meetingStartMinutes == "string"
     ) {
-        let durationHours =
-            Math.floor(durationMinutes / 60);
-        durationMinutes =
-            durationMinutes - (durationHours * 60);
-        let meetingEndHour =
-            Number(meetingStartHour) + durationHours;
-        let meetingEndMinutes =
-            Number(meetingStartMinutes) +
-            durationMinutes;
+        let durationHours = Math.floor(durationMinutes / 60);
+        durationMinutes = durationMinutes - durationHours * 60;
+        let meetingEndHour = Number(meetingStartHour) + durationHours;
+        let meetingEndMinutes = Number(meetingStartMinutes) + durationMinutes;
 
         if (meetingEndMinutes >= 60) {
             meetingEndHour = meetingEndHour + 1;
-            meetingEndMinutes =
-                meetingEndMinutes - 60;
+            meetingEndMinutes = meetingEndMinutes - 60;
         }
 
-        // re-compose fully-qualified time strings
-        // (to make comparison easier)
-        let meetingStart = `${
-            meetingStartHour.padStart(2,"0")
-        }:${
-            meetingStartMinutes.padStart(2,"0")
-        }`;
-        let meetingEnd = `${
-            String(meetingEndHour).padStart(2,"0")
-        }:${
-            String(meetingEndMinutes).padStart(2,"0")
-        }`;
+        // recomponer cadenas de tiempo totalmente calificadas
+        // (para facilitar la comparación)
+        let meetingStart = `${meetingStartHour.padStart(
+            2,
+            "0"
+        )}:${meetingStartMinutes.padStart(2, "0")}`;
+        let meetingEnd = `${String(meetingEndHour).padStart(2, "0")}:${String(
+            meetingEndMinutes
+        ).padStart(2, "0")}`;
 
-        // NOTE: since expressions are all strings,
-        // comparisons here are alphabetic, but it's
-        // safe here since they're fully qualified
-        // time strings (ie, "07:15" < "07:30")
-        return (
-            meetingStart >= dayStart &&
-            meetingEnd <= dayEnd
-        );
+        // NOTA: dado que las expresiones son todas cadenas,
+        // las comparaciones aquí son alfabéticas, pero es
+        // a salvo aquí ya que están completamente calificados
+        // cadenas de tiempo (es decir, "07:15" < "07:30")
+        return meetingStart >= dayStart && meetingEnd <= dayEnd;
     }
 
     return false;
 }
 
-scheduleMeeting("7:00",15);     // false
-scheduleMeeting("07:15",30);    // false
-scheduleMeeting("7:30",30);     // true
-scheduleMeeting("11:30",60);    // true
-scheduleMeeting("17:00",45);    // true
-scheduleMeeting("17:30",30);    // false
-scheduleMeeting("18:00",15);    // false
+scheduleMeeting("7:00", 15); // false
+scheduleMeeting("07:15", 30); // false
+scheduleMeeting("7:30", 30); // true
+scheduleMeeting("11:30", 60); // true
+scheduleMeeting("17:00", 45); // true
+scheduleMeeting("17:30", 30); // false
+scheduleMeeting("18:00", 15); // false
 ```
 
-----
+---
 
-Suggested solution for "Closure" (Pillar 1) practice:
+Solución sugerida para la práctica de "Cierre" (Pilar 1):
 
 ```js
-function range(start,end) {
+function range(start, end) {
     start = Number(start) || 0;
 
     if (end === undefined) {
         return function getEnd(end) {
-            return getRange(start,end);
+            return getRange(start, end);
         };
-    }
-    else {
+    } else {
         end = Number(end) || 0;
-        return getRange(start,end);
+        return getRange(start, end);
     }
-
 
     // **********************
 
-    function getRange(start,end) {
+    function getRange(start, end) {
         var ret = [];
         for (let i = start; i <= end; i++) {
             ret.push(i);
@@ -237,61 +217,50 @@ function range(start,end) {
     }
 }
 
-range(3,3);    // [3]
-range(3,8);    // [3,4,5,6,7,8]
-range(3,0);    // []
+range(3, 3); // [3]
+range(3, 8); // [3,4,5,6,7,8]
+range(3, 0); // []
 
 var start3 = range(3);
 var start4 = range(4);
 
-start3(3);     // [3]
-start3(8);     // [3,4,5,6,7,8]
-start3(0);     // []
+start3(3); // [3]
+start3(8); // [3,4,5,6,7,8]
+start3(0); // []
 
-start4(6);     // [4,5,6]
+start4(6); // [4,5,6]
 ```
 
-----
+---
 
-Suggested solution for "Prototypes" (Pillar 2) practice:
+Solución sugerida para la práctica de "Prototipos" (Pilar 2):
 
 ```js
 function randMax(max) {
-    return Math.trunc(1E9 * Math.random()) % max;
+    return Math.trunc(1e9 * Math.random()) % max;
 }
 
 var reel = {
-    symbols: [
-        "♠", "♥", "♦", "♣", "☺", "★", "☾", "☀"
-    ],
+    symbols: ["♠", "♥", "♦", "♣", "☺", "★", "☾", "☀"],
     spin() {
         if (this.position == null) {
-            this.position = randMax(
-                this.symbols.length - 1
-            );
+            this.position = randMax(this.symbols.length - 1);
         }
-        this.position = (
-            this.position + 100 + randMax(100)
-        ) % this.symbols.length;
+        this.position =
+            (this.position + 100 + randMax(100)) % this.symbols.length;
     },
     display() {
         if (this.position == null) {
-            this.position = randMax(
-                this.symbols.length - 1
-            );
+            this.position = randMax(this.symbols.length - 1);
         }
         return this.symbols[this.position];
-    }
+    },
 };
 
 var slotMachine = {
-    reels: [
-        Object.create(reel),
-        Object.create(reel),
-        Object.create(reel)
-    ],
+    reels: [Object.create(reel), Object.create(reel), Object.create(reel)],
     spin() {
-        this.reels.forEach(function spinReel(reel){
+        this.reels.forEach(function spinReel(reel) {
             reel.spin();
         });
     },
@@ -299,25 +268,19 @@ var slotMachine = {
         var lines = [];
 
         // display all 3 lines on the slot machine
-        for (
-            let linePos = -1; linePos <= 1; linePos++
-        ) {
-            let line = this.reels.map(
-                function getSlot(reel){
-                    var slot = Object.create(reel);
-                    slot.position = (
-                        reel.symbols.length +
-                        reel.position +
-                        linePos
-                    ) % reel.symbols.length;
-                    return slot.display();
-                }
-            );
+        for (let linePos = -1; linePos <= 1; linePos++) {
+            let line = this.reels.map(function getSlot(reel) {
+                var slot = Object.create(reel);
+                slot.position =
+                    (reel.symbols.length + reel.position + linePos) %
+                    reel.symbols.length;
+                return slot.display();
+            });
             lines.push(line.join(" | "));
         }
 
         return lines.join("\n");
-    }
+    },
 };
 
 slotMachine.spin();
@@ -333,4 +296,4 @@ slotMachine.display();
 // ☺ | ♦ | ★
 ```
 
-That's it for this book. But now it's time to look for real projects to practice these ideas on. Just keep coding, because that's the best way to learn!
+Eso es todo por este libro. Pero ahora es el momento de buscar proyectos reales para practicar estas ideas. ¡Siga programando, porque esa es la mejor manera de aprender!
