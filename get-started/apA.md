@@ -1,4 +1,5 @@
 # You Don't Know JS Yet: Get Started - 2da Edición
+
 # Apéndice A: Explorando más a fondo
 
 En este apéndice, vamos a explorar algunos temas del texto del capítulo principal con un poco más de detalle. Piense en este contenido como una vista previa opcional de algunos de los detalles más matizados cubiertos en el resto de la serie de libros.
@@ -16,6 +17,7 @@ var myName = "Kyle";
 
 var yourName = myName;
 ```
+
 Aquí, la variable `yourName` tiene una copia separada de la cadena `"Kyle"` del valor que está almacenado en `myName`. Esto se debe a que el valor es un primitivo, y los valores primitivos siempre se asignan/pasan como **copias de valor**.
 
 Así es como puede probar que hay dos valores separados involucrados:
@@ -44,7 +46,7 @@ Considere:
 var myAddress = {
     street: "123 JS Blvd",
     city: "Austin",
-    state: "TX"
+    state: "TX",
 };
 
 var yourAddress = myAddress;
@@ -58,35 +60,33 @@ console.log(yourAddress.street);
 
 Debido a que el valor asignado a `myAddress` es un objeto, se mantiene/asigna por referencia y, por lo tanto, la asignación a la variable `yourAddress` es una copia de la referencia, no el valor del objeto en sí. Es por eso que el valor actualizado asignado a `myAddress.street` se refleja cuando accedemos a `yourAddress.street`. `myAddress` y `yourAddress` tienen copias de la referencia al único objeto compartido, por lo que una actualización de uno es una actualización de ambos.
 
-<!-- AQUI -->
+Nuevamente, JS elige el comportamiento de copia del valor frente a copia de la referencia en función del tipo de valor. Las primitivos se mantienen por valor, los objetos se mantienen por referencia. No hay forma de anular esto en JS, de ninguna forma.
 
-Again, JS chooses the value-copy vs. reference-copy behavior based on the value type. Primitives are held by value, objects are held by reference. There's no way to override this in JS, in either direction.
+## Demasiadas formas de Funciones
 
-## So Many Function Forms
-
-Recall this snippet from the "Functions" section in Chapter 2:
+Recuerde este fragmento de la sección "Funciones" en el Capítulo 2:
 
 ```js
-var awesomeFunction = function(coolThings) {
+var awesomeFunction = function (coolThings) {
     // ..
     return amazingStuff;
 };
 ```
 
-The function expression here is referred to as an *anonymous function expression*, since it has no name identifier between the `function` keyword and the `(..)` parameter list. This point confuses many JS developers because as of ES6, JS performs a "name inference" on an anonymous function:
+La expresión de función aquí se denomina _expresión de función anónima_, ya que no tiene un identificador de nombre entre la palabra clave `function` y la lista de parámetros `(..)`. Este punto confunde a muchos desarrolladores de JS porque a partir de ES6, JS realiza una "inferencia de nombre" en una función anónima:
 
 ```js
 awesomeFunction.name;
 // "awesomeFunction"
 ```
 
-The `name` property of a function will reveal either its directly given name (in the case of a declaration) or its inferred name in the case of an anonymous function expression. That value is generally used by developer tools when inspecting a function value or when reporting an error stack trace.
+La propiedad `name` de una función revelará su nombre dado directamente (en el caso de una declaración) o su nombre inferido en el caso de una expresión de función anónima. Las herramientas de desarrollo suelen utilizar ese valor al inspeccionar el valor de una función o al informar un seguimiento del stack de errores.
 
-So even an anonymous function expression *might* get a name. However, name inference only happens in limited cases such as when the function expression is assigned (with `=`). If you pass a function expression as an argument to a function call, for example, no name inference occurs; the `name` property will be an empty string, and the developer console will usually report "(anonymous function)".
+Entonces, incluso una expresión de función anónima _podría_ obtener un nombre. Sin embargo, la inferencia de nombres solo ocurre en casos limitados, como cuando se asigna la expresión de función (con `=`). Si pasa una expresión de función como argumento a una llamada de función, por ejemplo, no se produce ninguna inferencia de nombre; la propiedad `name` será una cadena vacía, y la consola del desarrollador generalmente informará "(función anónima)".
 
-Even if a name is inferred, **it's still an anonymous function.** Why? Because the inferred name is a metadata string value, not an available identifier to refer to the function. An anonymous function doesn't have an identifier to use to refer to itself from inside itself—for recursion, event unbinding, etc.
+Incluso si se infiere un nombre, **sigue siendo una función anónima.** ¿Por qué? Debido a que el nombre inferido es un valor de cadena de metadatos, no un identificador disponible para hacer referencia a la función. Una función anónima no tiene un identificador para usar para referirse a sí misma desde dentro de sí misma, para recursividad, desvinculación de eventos, etc.
 
-Compare the anonymous function expression form to:
+Compare la forma de expresión de función anónima:
 
 ```js
 // let awesomeFunction = ..
@@ -100,19 +100,19 @@ awesomeFunction.name;
 // "someName"
 ```
 
-This function expression is a *named function expression*, since the identifier `someName` is directly associated with the function expression at compile time; the association with the identifier `awesomeFunction` still doesn't happen until runtime at the time of that statement. Those two identifiers don't have to match; sometimes it makes sense to have them be different, other times it's better to have them be the same.
+Esta expresión de función es una _expresión de función con nombre_, ya que el identificador `someName` está directamente asociado con la expresión de función en tiempo de compilación; la asociación con el identificador `awesomeFunction` todavía no ocurre hasta el tiempo de ejecución en el momento de esa declaración. Esos dos identificadores no tienen que coincidir; a veces tiene sentido que sean diferentes, otras veces es mejor que sean iguales.
 
-Notice also that the explicit function name, the identifier `someName`, takes precedence when assigning a *name* for the `name` property.
+Observe también que el nombre explícito de la función, el identificador `someName`, tiene prioridad cuando se asigna un _name_ para la propiedad `name`.
 
-Should function expressions be named or anonymous? Opinions vary widely on this. Most developers tend to be unconcerned with using anonymous functions. They're shorter, and unquestionably more common in the broad sphere of JS code out there.
+¿Deben las expresiones de función ser nombradas o anónimas? Las opiniones varían ampliamente al respecto. La mayoría de los desarrolladores tienden a no preocuparse por el uso de funciones anónimas. Son más cortos e, indudablemente, más comunes en la amplia esfera del código JS que existe.
 
-In my opinion, if a function exists in your program, it has a purpose; otherwise, take it out! And if it has a purpose, it has a natural name that describes that purpose.
+En mi opinión, si existe una función en su programa, tiene un propósito; de lo contrario, ¡sácaquela! Y si tiene un propósito, que tenga un nombre natural que describa ese propósito.
 
-If a function has a name, you the code author should include that name in the code, so that the reader does not have to infer that name from reading and mentally executing that function's source code. Even a trivial function body like `x * 2` has to be read to infer a name like "double" or "multBy2"; that brief extra mental work is unnecessary when you could just take a second to name the function "double" or "multBy2" *once*, saving the reader that repeated mental work every time it's read in the future.
+Si una función tiene un nombre, usted, el autor del código, debe incluir ese nombre en el código, para que el lector no tenga que inferir ese nombre al leer y ejecutar mentalmente el código fuente de esa función. Incluso el cuerpo de una función trivial como `x * 2` debe leerse para inferir un nombre como "doble" o "multBy2"; ese breve trabajo mental adicional es innecesario cuando podría tomarse un segundo para nombrar la función "doble" o "multBy2" _una vez_, ahorrando al lector ese trabajo mental repetido cada vez que se lea en el futuro.
 
-There are, regrettably in some respects, many other function definition forms in JS as of early 2020 (maybe more in the future!).
+Lamentablemente, en algunos aspectos, hay muchas otras formas de definición de funciones en JS a principios de 2020 (¡tal vez más en el futuro!).
 
-Here are some more declaration forms:
+Aquí hay algunos formularios de declaración más:
 
 ```js
 // generator function declaration
@@ -128,7 +128,7 @@ async function *four() { .. }
 export function five() { .. }
 ```
 
-And here are some more of the (many!) function expression forms:
+Y aquí hay algunas más de las (¡muchas!) formas de expresión de funciones:
 
 ```js
 // IIFE
@@ -155,120 +155,119 @@ someOperation( x => x * 2 );
 // ..
 ```
 
-Keep in mind that arrow function expressions are **syntactically anonymous**, meaning the syntax doesn't provide a way to provide a direct name identifier for the function. The function expression may get an inferred name, but only if it's one of the assignment forms, not in the (more common!) form of being passed as a function call argument (as in the last line of the snippet).
+Tenga en cuenta que las expresiones de función de flecha son **sintácticamente anónimas**, lo que significa que la sintaxis no proporciona una forma de proporcionar un identificador de nombre directo para la función. La expresión de función puede obtener un nombre inferido, pero solo si es una de las formas de asignación, no en la forma (¡más común!) de ser pasada como un argumento de llamada de función (como en la última línea del fragmento).
 
-Since I don't think anonymous functions are a good idea to use frequently in your programs, I'm not a fan of using the `=>` arrow function form. This kind of function actually has a specific purpose (i.e., handling the `this` keyword lexically), but that doesn't mean we should use it for every function we write. Use the most appropriate tool for each job.
+Dado que no creo que las funciones anónimas sean una buena idea para usar con frecuencia en sus programas, no soy partidario de usar la forma de función de flecha `=>`. Este tipo de función en realidad tiene un propósito específico (es decir, manejar la palabra clave `this` léxicamente), pero eso no significa que debamos usarla para cada función que escribimos. Utilizar la herramienta más adecuada para cada trabajo.
 
-Functions can also be specified in class definitions and object literal definitions. They're typically referred to as "methods" when in these forms, though in JS this term doesn't have much observable difference over "function":
+Las funciones también se pueden especificar en definiciones de clases y definiciones de objetos literales. Por lo general, se denominan "métodos" cuando están en estas formas, aunque en JS este término no tiene mucha diferencia observable sobre "función":
 
 ```js
 class SomethingKindaGreat {
-    // class methods
-    coolMethod() { .. }   // no commas!
+    // metodos de clase
+    coolMethod() { .. }   // no comas!
     boringMethod() { .. }
 }
 
 var EntirelyDifferent = {
-    // object methods
-    coolMethod() { .. },   // commas!
+    // metodos de objeto
+    coolMethod() { .. },   // comas!
     boringMethod() { .. },
 
-    // (anonymous) function expression property
+    // propiedad de expresión de función (anónima)
     oldSchool: function() { .. }
 };
 ```
 
-Phew! That's a lot of different ways to define functions.
+¡Uf! Esas son muchas maneras diferentes de definir funciones.
 
-There's no simple shortcut path here; you just have to build familiarity with all the function forms so you can recognize them in existing code and use them appropriately in the code you write. Study them closely and practice!
+No hay una ruta de atajo simple aquí; solo tiene que familiarizarse con todos los formularios de función para que pueda reconocerlos en el código existente y usarlos adecuadamente en el código que escribe. ¡Estudíelos de cerca y practique!
 
-## Coercive Conditional Comparison
+## Comparación condicional coercitiva
 
-Yes, that section name is quite a mouthful. But what are we talking about? We're talking about conditional expressions needing to perform coercion-oriented comparisons to make their decisions.
+Sí, el nombre de esa sección es bastante complicado. ¿Pero de qué estamos hablando? Estamos hablando de expresiones condicionales que necesitan realizar comparaciones orientadas a la coerción para tomar sus decisiones.
 
-`if` and `? :`-ternary statements, as well as the test clauses in `while` and `for` loops, all perform an implicit value comparison. But what sort? Is it "strict" or "coercive"? Both, actually.
+`if` y `? ¨` Las sentencias ternarias, así como las cláusulas de prueba en los bucles `while` y `for`, realizan una comparación de valores implícita. ¿Pero de qué tipo? ¿Es "estricto" o "coercitivo"? Ambos, en realidad.
 
-Consider:
+Considere:
 
 ```js
 var x = 1;
 
 if (x) {
-    // will run!
+    // ¡se ejecutará!
 }
 
 while (x) {
-    // will run, once!
+    // se ejecutará, una vez!
     x = false;
 }
 ```
 
-You might think of these `(x)` conditional expressions like this:
+Podría pensar en estas expresiones condicionales `(x)` como esta:
 
 ```js
 var x = 1;
 
 if (x == true) {
-    // will run!
+    // ¡se ejecutará!
 }
 
 while (x == true) {
-    // will run, once!
+    // se ejecutará, una vez!
     x = false;
 }
 ```
 
-In this specific case -- the value of `x` being `1` -- that mental model works, but it's not accurate more broadly. Consider:
+En este caso específico, el valor de `x` siendo `1`, ese modelo mental funciona, pero no es preciso en términos más generales. Considere:
 
 ```js
 var x = "hello";
 
 if (x) {
-    // will run!
+    // ¡se ejecutará!
 }
 
 if (x == true) {
-    // won't run :(
+    // no se ejecuta :(
 }
 ```
 
-Oops. So what is the `if` statement actually doing? This is the more accurate mental model:
+Ups. Entonces, ¿qué está haciendo realmente la sentencia `if`? Este es el modelo mental más preciso:
 
 ```js
 var x = "hello";
 
 if (Boolean(x) == true) {
-    // will run
+    // ¡se ejecutará!
 }
 
-// which is the same as:
+// que es lo mismo que:
 
 if (Boolean(x) === true) {
-    // will run
-}
+     // ¡se ejecutará!
 ```
 
-Since the `Boolean(..)` function always returns a value of type boolean, the `==` vs `===` in this snippet is irrelevant; they'll both do the same thing. But the important part is to see that before the comparison, a coercion occurs, from whatever type `x` currently is, to boolean.
+Dado que la función `Boolean(..)` siempre devuelve un valor de tipo booleano, `==` frente a `===` en este fragmento es irrelevante; ambos harán lo mismo. Pero la parte importante es ver que antes de la comparación, se produce una coerción, de cualquier tipo que sea `x` actualmente, a booleano.
 
-You just can't get away from coercions in JS comparisons. Buckle down and learn them.
+Simplemente no puede escapar de las coerciones en las comparaciones de JS. Anímase y apréndalos.
 
-## Prototypal "Classes"
+## "Clases" prototipo
 
-In Chapter 3, we introduced prototypes and showed how we can link objects through a prototype chain.
+En el Capítulo 3, presentamos prototipos y mostramos cómo podemos vincular objetos a través de una cadena de prototipos.
 
-Another way of wiring up such prototype linkages served as the (honestly, ugly) predecessor to the elegance of the ES6 `class` system (see Chapter 2, "Classes"), and is referred to as prototypal classes.
+Otra forma de conectar tales enlaces de prototipo sirvió como el (honestamente, feo) predecesor de la elegancia del sistema de "clases" de ES6 (consulte el Capítulo 2, "Clases"), y se conoce como clases prototípicas.
 
-| TIP: |
-| :--- |
-| While this style of code is quite uncommon in JS these days, it's still perplexingly rather common to be asked about it in job interviews! |
+| TIP:                                                                                                                                                          |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Si bien este estilo de código es bastante poco común en JS en estos días, ¡todavía es bastante común que te pregunten sobre él en las entrevistas de trabajo! |
 
-Let's first recall the `Object.create(..)` style of coding:
+Primero recordemos el estilo de codificación `Object.create(..)`:
 
 ```js
 var Classroom = {
     welcome() {
         console.log("Welcome, students!");
-    }
+    },
 };
 
 var mathClass = Object.create(Classroom);
@@ -277,9 +276,9 @@ mathClass.welcome();
 // Welcome, students!
 ```
 
-Here, a `mathClass` object is linked via its prototype to a `Classroom` object. Through this linkage, the function call `mathClass.welcome()` is delegated to the method defined on `Classroom`.
+Aquí, un objeto `mathClass` está vinculado a través de su prototipo a un objeto `Classroom`. A través de este vínculo, la llamada a la función `mathClass.welcome()` se delega al método definido en `Classroom`.
 
-The prototypal class pattern would have labeled this delegation behavior "inheritance," and alternatively have defined it (with the same behavior) as:
+El patrón de clase prototípico habría etiquetado este comportamiento de delegación como "herencia" y, alternativamente, lo habría definido (con el mismo comportamiento) como:
 
 ```js
 function Classroom() {
@@ -296,15 +295,15 @@ mathClass.welcome();
 // Welcome, students!
 ```
 
-All functions by default reference an empty object at a property named `prototype`. Despite the confusing naming, this is **not** the function's *prototype* (where the function is prototype linked to), but rather the prototype object to *link to* when other objects are created by calling the function with `new`.
+Todas las funciones por defecto hacen referencia a un objeto vacío en una propiedad llamada `prototity`. A pesar del nombre confuso, este **no** es el _prototipo_ de la función (donde la función está vinculada al prototipo), sino el objeto prototipo al que _vincularse_ cuando se crean otros objetos llamando a la función con `new`.
 
-We add a `welcome` property on that empty object (called `Classroom.prototype`), pointing at the `hello()` function.
+Agregamos una propiedad de `welcome` en ese objeto vacío (llamado `Classroom.prototype`), apuntando a la función `hello()`.
 
-Then `new Classroom()` creates a new object (assigned to `mathClass`), and prototype links it to the existing `Classroom.prototype` object.
+Luego `new Classroom()` crea un nuevo objeto (asignado a `mathClass`), y el prototipo lo vincula al objeto `Classroom.prototype` existente.
 
-Though `mathClass` does not have a `welcome()` property/function, it successfully delegates to the function `Classroom.prototype.welcome()`.
+Aunque `mathClass` no tiene una propiedad/función `welcome()`, delega con éxito a la función `Classroom.prototype.welcome()`.
 
-This "prototypal class" pattern is now strongly discouraged, in favor of using ES6's `class` mechanism:
+Este patrón de "clase prototípica" ahora se desaconseja enfáticamente, a favor de usar el mecanismo de `class` de ES6:
 
 ```js
 class Classroom {
@@ -323,4 +322,4 @@ mathClass.welcome();
 // Welcome, students!
 ```
 
-Under the covers, the same prototype linkage is wired up, but this `class` syntax fits the class-oriented design pattern much more cleanly than "prototypal classes".
+Debajo de las cubiertas, el mismo enlace prototipo está conectado, pero esta sintaxis de `clase` se ajusta al patrón de diseño orientado a la clase mucho más limpiamente que las "clases prototipo".
